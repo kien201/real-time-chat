@@ -1,0 +1,104 @@
+@import '../../index.scss';
+
+.container {
+    width: 80%;
+    margin-inline: auto;
+    margin-top: 10px;
+
+    @media screen and (max-width: $mobile) {
+        width: 95%;
+    }
+
+    button {
+        padding: 8px 12px;
+        margin-right: 5px;
+        border-radius: 10px;
+        transition: background-color ease .2s;
+
+        &.btn-add {
+            color: #fff;
+            background-color: rgb(81, 194, 64);
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+
+        &.btn-delete:hover {
+            color: #fff;
+            background-color: var(--color-red);
+        }
+
+        &.btn-edit:hover {
+            color: #fff;
+            background-color: rgb(255, 146, 21);
+        }
+    }
+
+    .title {
+        text-align: center;
+        font-weight: 600;
+    }
+
+    .table-shadow {
+        --table-padding-inline: 40px;
+        margin-top: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba($color: #000, $alpha: 0.1);
+
+        table {
+            width: 100%;
+            text-align: left;
+
+            .table-head {
+                box-shadow: 0 5px 20px rgba($color: #000, $alpha: 0.1);
+
+                tr {
+                    th {
+                        padding-top: 16px;
+                        padding-bottom: 16px;
+                        padding-left: 16px;
+                        font-size: 18px;
+                        font-weight: 600;
+                        color: var(--primary-color);
+
+                        &:first-child {
+                            padding-left: var(--table-padding-inline);
+                        }
+
+                        &:last-child {
+                            width: 1%;
+                            padding-right: var(--table-padding-inline);
+                        }
+                    }
+                }
+            }
+
+            .table-body {
+                tr {
+                    &:hover {
+                        cursor: pointer;
+                        background-color: #eee;
+                    }
+                    
+                    td {
+                        padding-top: 12px;
+                        padding-bottom: 12px;
+                        padding-left: 16px;
+                        font-size: 14px;
+                        color: var(--text-secondary);
+                        
+                        &:first-child {
+                            padding-left: var(--table-padding-inline);
+                        }
+
+                        &:last-child {
+                            text-wrap: nowrap;
+                            padding-right: var(--table-padding-inline);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

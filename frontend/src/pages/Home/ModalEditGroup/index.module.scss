@@ -1,0 +1,109 @@
+@import '../../../index.scss';
+
+.modal-container {
+    width: 50%;
+    margin-inline: auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+
+    margin-top: 50px;
+
+    .modal-header {
+        display: flex;
+        margin-bottom: 20px;
+        align-items: center;
+        justify-content: space-between;
+
+        input {
+            padding: 8px 4px;
+            width: 50%;
+            border-bottom: 1px solid #ccc;
+        }
+
+        button {
+            padding: 8px 12px;
+            font-size: 20px;
+
+            &:hover {
+                color: var(--primary-color);
+            }
+        }
+    }
+
+    .modal-body {
+        margin-bottom: 10px;
+
+        .container-header {
+            display: flex;
+            align-items: center;
+
+            h3 {
+                width: 50%;
+                font-weight: 500;
+            }
+            
+            input {
+                width: 50%;
+                display: block;
+                margin-inline: auto;
+                border: 1px solid #ccc;
+                border-radius: 999px;
+                padding: 8px 12px;
+    
+                &:focus {
+                    border: 1px solid var(--primary-color);
+                }
+            }
+        }
+
+        .container-body {
+            display: flex;
+            margin-top: 10px;
+
+            .user-list {
+                width: 50%;
+                padding-right: 10px;
+                max-height: 400px;
+                overflow-y: auto;
+
+                .wrapper {
+                    .user-item {
+                        padding: 4px 0;
+                        display: flex;
+                        align-items: center;
+
+                        span {
+                            flex: 1;
+                        }
+
+                        button {
+                            display: flex;
+                            font-size: 30px;
+
+                            &:hover {
+                                color: var(--primary-color);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+    .modal-footer {
+        text-align: center;
+
+        button {
+            padding: 8px 12px;
+            border: 1px solid var(--primary-color);
+            border-radius: 4px;
+
+            &:hover {
+                color: #fff;
+                background-color: var(--primary-color);
+            }
+        }
+    }
+}

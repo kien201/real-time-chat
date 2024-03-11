@@ -1,0 +1,78 @@
+@import '../../index.scss';
+
+.content {
+    background-color: var(--secondary-color);
+    min-height: 100vh;
+    padding: 10% 0;
+
+    &::before {
+        display: block;
+        content: '';
+        height: 1px;
+    }
+
+    button, input {
+        font-size: 0.9rem;
+    }
+
+    .container {
+        width: 25%;
+        margin: auto;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        background-color: #fff;
+        overflow: hidden;
+    
+        @media screen and (max-width: $tablet) {
+            width: 40%;
+        }
+    
+        @media screen and (max-width: $mobile) {
+            width: 70%;
+        }
+    
+        .form-header {
+            display: flex;
+            box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+    
+            button {
+                display: block;
+                flex: 1;
+                text-align: center;
+                padding: 10px;
+    
+                &.active {
+                    background-color: var(--third-color)
+                }
+            }
+        }
+    
+        .form-body {
+            padding: 10px 30px;
+    
+            input {
+                width: 100%;
+                border-bottom: 2px solid #ccc;
+                padding: 8px 3px;
+                margin-bottom: 10px;
+            }
+    
+            button {
+                width: 100%;
+                border: 1px solid #ccc;
+                border-radius: 999px;
+                padding: 10px;
+                text-align: center;
+                margin-top: 10px;
+                color: #fff;
+                background: var(--primary-color);
+                opacity: 0.8;
+    
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

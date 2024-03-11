@@ -1,0 +1,117 @@
+@import '../../../index.scss';
+
+.content-left {
+    width: 30%;
+
+    @media screen and (max-width: $tablet) {
+        width: 40%;
+    }
+
+    @media screen and (max-width: $mobile) {
+        width: 50%;
+    }
+
+    .search-bar {
+        height: var(--header-height);
+        display: flex;
+        align-items: center;
+        padding: 0 var(--spacing);
+
+        input {
+            flex: 1;
+            border: 1px solid #ccc;
+            border-radius: 999px;
+            padding: 8px 12px;
+
+            &:focus {
+                border: 1px solid var(--primary-color);
+            }
+        }
+
+        button {
+            display: flex;
+            padding: 8px 12px;
+            margin-left: 4px;
+            font-size: 20px;
+            border-radius: 4px;
+
+            &:hover {
+                background-color: #eee;
+            }
+        }
+    }
+
+    .room-list {
+        height: calc(100% - var(--header-height));
+
+        .room-wrapper {
+            height: 100%;
+            overflow-y: auto;
+            
+            &::-webkit-scrollbar {
+                width: 10px;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background-color: rgb(204, 204, 204, 0.7);
+                border-radius: 999px;
+
+                &:hover {
+                    background-color: rgb(204, 204, 204, 1);
+                }
+            }
+
+            .query-length-require {
+                padding-left: var(--spacing);
+                color: var(--text-secondary);
+            }
+
+            .room-item {
+                width: 100%;
+                height: 80px;
+                display: flex;
+                align-items: center;
+                padding: var(--spacing);
+                transition: background-color ease .2s;
+    
+                &.active {
+                    background-color: var(--fourth-color);
+                }
+    
+                &:not(.active):hover {
+                    background-color: #eee;
+                }
+    
+                .room-info {
+                    flex: 1;
+                    max-width: calc(100% - var(--avatar-size) - var(--spacing));
+    
+                    .room-title {
+                        display: flex;
+                        align-items: center;
+                        padding-bottom: 2px;
+    
+                        h4 {
+                            flex: 1;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            font-weight: 500;
+                        }
+    
+                        span {
+                            margin-left: var(--spacing);
+                        }
+                    }
+    
+                    .room-content {
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        overflow: hidden;
+                    }
+                }
+            }
+        }
+    }
+
+}
